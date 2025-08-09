@@ -1,0 +1,5 @@
+<odoo>
+    <menuitem id="menu_trade_root" name="Trading"/>
+    <menuitem id="menu_trade" name="Trades" parent="menu_trade_root" action="action_trade"/>
+</odoo>
+
