@@ -1,5 +1,20 @@
 <odoo>
     <menuitem id="menu_trade_root" name="Trading"/>
-    <menuitem id="menu_trade" name="Trades" parent="menu_trade_root" action="action_trade"/>
+
+    <record id="action_trade_dashboard" model="ir.actions.act_url">
+        <field name="name">Dashboard</field>
+        <field name="url">/rusetta_trade/dashboard</field>
+        <field name="target">self</field>
+    </record>
+
+    <menuitem id="menu_trade_dashboard"
+              name="Dashboard"
+              parent="menu_trade_root"
+              action="action_trade_dashboard"/>
+
+    <menuitem id="menu_trade"
+              name="Trades"
+              parent="menu_trade_root"
+              action="action_trade"/>
 </odoo>
 

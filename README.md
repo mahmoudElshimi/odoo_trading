@@ -22,11 +22,11 @@ Developed with a focus on **clarity, usability, and accurate P/L calculations**.
 
 1. **Trade Form View**
 
-   ![Form View](./static/description/images/form_view.png)
+   ![Form View](./rusetta_trade/static/description/images/form_view.png)
 
 2. **List View**
 
-   ![List View](./static/description/images/list_view.png)
+   ![List View](./rusetta_trade/static/description/images/list_view.png)
 
 ---
 
