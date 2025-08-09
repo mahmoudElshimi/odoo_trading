@@ -9,6 +9,7 @@
                 <field name="entry_price"/>
                 <field name="take_profit"/>
                 <field name="stop_loss"/>
+                <field name="current_profit"/>
                 <field name="final_profit"/>
                 <field name="state"/>
             </list>
@@ -49,7 +50,8 @@
 					<field name="create_date"/>
 				</h1>
 			</div>
-                    <group>
+		<group>
+                    <group string="Your Trade Data">
                         <field name="opt_type"/>
                         <field name="entry_price"/>
                         <field name="lot_size"/>
@@ -58,14 +60,29 @@
                         <field name="take_profit"/>
                         <field name="stop_loss"/>
                     </group>
-                    <group>
+		    <group string="Market Data">
+			    <button name="action_update_values"
+				    string="Update Market Data"
+				    type="object"
+				    class="btn-primary"/>
+			    <field name="bid"/>
+			    <field name="ask"/>
+			    <field name="open_"/>
+			    <field name="low"/>
+			    <field name="high"/>
+			    <field name="change"/>
+			    <field name="api_time"/>
+			    <field name="current_profit"/>
+		    </group>
+	    </group>
+                    <group string="State Data">
                         <field name="state" readonly="1"/>
                         <field name="start_time" readonly="1"/>
                         <field name="close_time" readonly="1"/>
                         <field name="close_price" invisible="('state','!=','running')"/>
                         <field name="final_profit" readonly="1"/>
                     </group>
-		    <group>
+		    <group string="Charts">
 	     <div class="oe_chatter"></div>
                 <div style="width:100%; height:500px;">
                     <div class="tradingview-widget-container" style="height:100%;">
