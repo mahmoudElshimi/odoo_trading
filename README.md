@@ -36,7 +36,7 @@ Developed with a focus on **clarity, usability, and accurate P/L calculations**.
    Clone the `rusetta_trade` directory into your Odoo custom addons path:
 
    ```bash
-   git clone https://github.com/YOUR_GITHUB_USERNAME/odoo_trading.git /path/to/odoo/custom/addons/
+   git clone https://github.com/mahmoudElshimi/odoo_trading.git /path/to/odoo/custom/addons/
    ```
 
 2. **Restart Odoo and Update App List**
