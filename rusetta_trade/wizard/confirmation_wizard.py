@@ -27,9 +27,7 @@ class ConfirmationWizard(models.TransientModel):
         if not self.market_price:
             raise UserError("Please enter the market price before closing.")
 
-        # Set the close_price from wizard input
         self.trade_id.close_price = self.market_price
-        # Call the trade's close action
         self.trade_id.action_close()
 
         return {"type": "ir.actions.act_window_close"}

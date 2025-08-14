@@ -71,6 +71,20 @@ class RusettaTrade(models.Model):
         return record
 
 
+    @api.model
+    def write(self, vals):
+        for rec in self:
+            # Completely block edits for closed or canceled trades
+            if rec.state in ('close', 'cancel'):
+                raise UserError("You cannot modify a closed or canceled trade.")
+
+            protected_fields_running = {'entry_price', 'opt_type', 'lot_size'}
+            if rec.state == 'running' and protected_fields_running.intersection(vals.keys()):
+                raise UserError(
+                    "You cannot change Entry Price, Opration Type, or Lot Size while the trade is running."
+                )
+
+        return super().write(vals)
     def _fetch_and_update_forex_data(self):
         api_key = self._get_api_key()
         try:
