@@ -45,6 +45,11 @@ class RusettaTrade(models.Model):
     change = fields.Float(string="Change", digits=(16, 5), readonly=True)
     api_time = fields.Datetime(string="Data Update Date", readonly=True)
 
+    balance = fields.Float(string="Account Balance", required=True, default=10000.0)
+    leverage = fields.Integer(string="Leverage", required=True, default=100)
+    margin = fields.Float(string="Margin", digits=(16, 2), compute="_compute_margin_free_margin", store=True, readonly=True)
+    free_margin = fields.Float(string="Free Margin", digits=(16, 2), compute="_compute_margin_free_margin", store=True, readonly=True)
+
     current_profit = fields.Float(string="Current Profit", digits=(16, 2), readonly=True)
     final_profit = fields.Float(string="Final Profit", digits=(16, 2), readonly=True)
 
@@ -85,6 +90,7 @@ class RusettaTrade(models.Model):
                 )
 
         return super().write(vals)
+
     def _fetch_and_update_forex_data(self):
         api_key = self._get_api_key()
         try:
@@ -111,6 +117,18 @@ class RusettaTrade(models.Model):
         except Exception as e:
             raise UserError(f"Error fetching forex data: {e}")
 
+
+    @api.depends('lot_size', 'leverage', 'balance')
+    def _compute_margin_free_margin(self):
+        contract_size = 100000  # standard lot
+        for rec in self:
+            if rec.lot_size and rec.leverage:
+                rec.margin = (rec.lot_size * contract_size) / rec.leverage
+            else:
+                rec.margin = 0.0
+            rec.free_margin = (rec.balance or 0.0) - rec.margin
+
+    @api.depends('entry_price', 'lot_size', 'bid', 'ask')
     def _compute_current_profit(self):
         for rec in self:
             if rec.entry_price and rec.lot_size and rec.bid and rec.ask:
@@ -145,6 +163,13 @@ class RusettaTrade(models.Model):
             else:
                 self.profit = ((self.take_profit or 0) - self.entry_price) * (self.lot_size * std_lot)
                 self.loss = (self.entry_price - (self.stop_loss or 0)) * (self.lot_size * std_lot)
+
+    @api.onchange('lot_size', 'leverage', 'balance')
+    def _onchange_margin(self):
+        contract_size = 100000 
+        if self.lot_size and self.leverage:
+            self.margin = (self.lot_size * contract_size) / self.leverage
+            self.free_margin = (self.balance or 0.0) - self.margin
 
     def action_update_values(self):
         self._fetch_and_update_forex_data()
