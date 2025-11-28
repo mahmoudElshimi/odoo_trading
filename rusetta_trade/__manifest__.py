@@ -15,8 +15,8 @@
     #    'static/src/xml/card_templates.xml',
     #],
     'data': [
-        'security/ir.model.access.csv',
         'security/trade_security.xml',
+        'security/ir.model.access.csv',
         'wizard/confirmation_wizard.xml',
         'views/dashboard_template.xml',
         'views/rusetta_trade_views.xml',

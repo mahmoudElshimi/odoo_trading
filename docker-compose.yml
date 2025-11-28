@@ -6,6 +6,7 @@ services:
       - db
     ports:
       - "8069:8069"
+
     volumes:
       - ./rusetta_trade:/mnt/extra-addons/rusetta_trade
 
@@ -13,7 +14,7 @@ services:
       watch:
         - action: sync
           path: ./rusetta_trade
-          target: /mnt/extra-addons
+          target: /mnt/extra-addons/rusetta_trade
         - action: restart
           path: ./rusetta_trade
 
@@ -23,6 +24,7 @@ services:
         "-d",
         "base",
       ]
+
   db:
     image: postgres:15
     container_name: db
@@ -30,4 +32,3 @@ services:
       - POSTGRES_DB=base
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
-

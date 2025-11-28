@@ -7,14 +7,18 @@
         <field name="target">self</field>
     </record>
 
-    <menuitem id="menu_trade_dashboard"
-              name="Dashboard"
-              parent="menu_trade_root"
-              action="action_trade_dashboard"/>
-
     <menuitem id="menu_trade"
               name="Trades"
               parent="menu_trade_root"
+	      groups="rusetta_trade.group_trade_admin,rusetta_trade.group_trade_user"
+	      sequence="1"
               action="action_trade"/>
+
+    <menuitem id="menu_trade_dashboard"
+              name="Dashboard"
+              parent="menu_trade_root"
+	      groups="rusetta_trade.group_trade_admin,rusetta_trade.group_trade_user"
+              action="action_trade_dashboard"/>
+
 </odoo>
 
