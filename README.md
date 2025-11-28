@@ -29,7 +29,14 @@ Developed with a focus on **clarity, usability, and accurate P/L calculations**.
    ![List View](./rusetta_trade/static/description/images/list_view.png)
 
 ---
+## Run With Docker
 
+ ```bash
+  git clone https://github.com/mahmoudElshimi/odoo_trading.git
+  cd odoo_trading
+  docker-compose up
+ ```
+---
 ## Installation
 
 1. **Clone the Repository**
@@ -57,7 +64,7 @@ Developed with a focus on **clarity, usability, and accurate P/L calculations**.
 
 ## To Do
 
-* Add **chart view** for trade performance over time.
+* ~~Add **chart view** for trade performance over time.~~ # Done as per 4958010
 * Add **ٌReal Time Rating**.
 
 ---
