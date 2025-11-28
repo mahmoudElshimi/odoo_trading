@@ -1,0 +1,33 @@
+services:
+  odoo:
+    image: odoo:18.0
+    container_name: odoo
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./rusetta_trade:/mnt/extra-addons/rusetta_trade
+
+    develop:
+      watch:
+        - action: sync
+          path: ./rusetta_trade
+          target: /mnt/extra-addons
+        - action: restart
+          path: ./rusetta_trade
+
+    command:
+      [
+        "--",
+        "-d",
+        "base",
+      ]
+  db:
+    image: postgres:15
+    container_name: db
+    environment:
+      - POSTGRES_DB=base
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+
