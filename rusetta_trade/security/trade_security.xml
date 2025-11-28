@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data noupdate="0">
+	<data>
+	    <record id="category_rusetta_trade" model="ir.module.category">
+		<field name="name">Rusetta Trade</field>
+		<field name="sequence">7</field>
+	    </record>
 	    <record id="group_trade_admin" model="res.groups">
 		<field name="name">Trade Admin</field>
+		<field name="category_id" ref="rusetta_trade.category_rusetta_trade"/>
 	    </record>
 	    <record id="group_trade_user" model="res.groups">
 		<field name="name">Trade User</field>
+		<field name="category_id" ref="rusetta_trade.category_rusetta_trade"/>
 	    </record>
 	</data>
 </odoo>
