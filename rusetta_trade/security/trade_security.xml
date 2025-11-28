@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+	    <record id="group_trade_admin" model="res.groups">
+		<field name="name">Trade Admin</field>
+	    </record>
+	    <record id="group_trade_user" model="res.groups">
+		<field name="name">Trade User</field>
+	    </record>
+	</data>
+</odoo>

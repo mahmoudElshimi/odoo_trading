@@ -16,6 +16,7 @@
     #],
     'data': [
         'security/ir.model.access.csv',
+        'security/trade_security.xml',
         'wizard/confirmation_wizard.xml',
         'views/dashboard_template.xml',
         'views/rusetta_trade_views.xml',
