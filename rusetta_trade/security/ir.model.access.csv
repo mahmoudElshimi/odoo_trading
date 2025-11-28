@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_rusetta_trade,access_rusetta_trade,model_rusetta_trade,,1,1,1,1
-access_confirmation_wizard,access_confirmation_wizard,model_confirmation_wizard,,1,1,1,1
+access_rusetta_trade_admin,access_rusetta_trade_admin,model_rusetta_trade,rusetta_trade.group_trade_admin,1,1,1,1
+access_rusetta_trade_user,access_rusetta_trade_user,model_rusetta_trade,rusetta_trade.group_trade_user,1,1,1,0
+access_confirmation_wizard_admin,access_confirmation_wizard_admin,model_confirmation_wizard,rusetta_trade.group_trade_admin,1,1,1,1
+access_confirmation_wizard_user,access_confirmation_wizard_user,model_confirmation_wizard,rusetta_trade.group_trade_user,1,1,1,0
