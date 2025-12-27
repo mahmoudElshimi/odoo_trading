@@ -1,0 +1,5 @@
+<templates xml:space="preserve">
+   <t t-name="rusetta_trade.CustomList">
+		<h1>Welcome From OWL!</h1>
+   </t>
+</templates>

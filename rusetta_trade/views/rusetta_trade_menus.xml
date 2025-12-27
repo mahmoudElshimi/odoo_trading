@@ -23,6 +23,8 @@
     <menuitem id="menu_trade_custom_list"
               name="Custom List"
               parent="menu_trade_root"
+	      sequence="10"
+	      groups="rusetta_trade.group_trade_admin,rusetta_trade.group_trade_user"
               action="action_custom_list"/>
 </odoo>
 

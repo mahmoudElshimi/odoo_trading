@@ -10,13 +10,13 @@ services:
     volumes:
       - ./rusetta_trade:/mnt/extra-addons/rusetta_trade
 
-    develop:
-      watch:
-        - action: sync
-          path: ./rusetta_trade
-          target: /mnt/extra-addons/rusetta_trade
-        - action: restart
-          path: ./rusetta_trade
+#    develop:
+#      watch:
+#        - action: sync
+#          path: ./rusetta_trade
+#          target: /mnt/extra-addons/rusetta_trade
+#        - action: restart
+#          path: ./rusetta_trade
 
     command:
       [

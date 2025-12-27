@@ -1,7 +1,7 @@
 {
     "name": "Rusetta Trading Manager",
     "summary": "Trading Platform",
-    "depends": ["base", "mail"],
+    "depends": ["base", "mail", "web"],
     "author": "Mahmoud ElShimi",
     "website": "mailto:mahmoudelshimi@protonmail.ch",
     "category": "Trading",
@@ -11,9 +11,6 @@
         "images/list_view.png",
         "images/form_view.png",
     ],
-    #'qweb': [
-    #    'static/src/xml/card_templates.xml',
-    #],
     'data': [
         'security/trade_security.xml',
         'security/ir.model.access.csv',
@@ -22,6 +19,12 @@
         'views/rusetta_trade_views.xml',
         'views/rusetta_trade_menus.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'rusetta_trade/static/src/components/listView/listView.js',
+            'rusetta_trade/static/src/components/listView/listView.xml',
+        ],
+    },
     "installable": True,
     "application": True,
 }
