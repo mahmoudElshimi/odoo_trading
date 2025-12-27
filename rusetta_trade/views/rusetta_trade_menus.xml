@@ -20,5 +20,9 @@
 	      groups="rusetta_trade.group_trade_admin,rusetta_trade.group_trade_user"
               action="action_trade_dashboard"/>
 
+    <menuitem id="menu_trade_custom_list"
+              name="Custom List"
+              parent="menu_trade_root"
+              action="action_custom_list"/>
 </odoo>
 
