@@ -20,11 +20,15 @@ Developed with a focus on **clarity, usability, and accurate P/L calculations**.
 
 ## Screenshots
 
-1. **Trade Form View**
+1. **Custome List View**
+
+   ![Custom List View](./rusetta_trade/static/description/images/custome_list.png)
+
+2. **Trade Form View**
 
    ![Form View](./rusetta_trade/static/description/images/form_view.png)
 
-2. **List View**
+3. **List View**
 
    ![List View](./rusetta_trade/static/description/images/list_view.png)
 
