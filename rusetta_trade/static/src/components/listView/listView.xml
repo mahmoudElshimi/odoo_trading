@@ -1,5 +1,25 @@
 <templates xml:space="preserve">
    <t t-name="rusetta_trade.CustomList">
 		<h1>Welcome From OWL!</h1>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>Created On</th>
+						<th>Opration Type</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<t t-foreach="state.trades" t-as="trade" t-key="trade.id">
+						<tr>
+							<th><t t-esc="trade.create_date"/></th>
+							<th><t t-esc="trade.opt_type"/></th>
+							<th><t t-esc="trade.state"/></th>
+						</tr>
+					</t>
+				</tbody>
+			</table>
+		</div>
    </t>
 </templates>
