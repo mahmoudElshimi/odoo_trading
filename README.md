@@ -75,7 +75,7 @@ Developed with a focus on **clarity, usability, and accurate P/L calculations**.
 
 ## License
 
-Released under the **MIT License**.
+Released under the **MIT/X License**.
 
 > RTFM
 > KISS
